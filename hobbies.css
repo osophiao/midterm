@@ -1,17 +1,19 @@
 body {
     margin: 0;
-    padding: 60px 0;
+    padding: 0;
     font-family: 'Cantata One', sans-serif;
     display: grid;
     grid-template-rows: auto 1fr auto;
+    grid-template-columns: 1fr 50% 1fr;
     background-color: #7D8F72;
-    justify-items: center; 
-    align-items: center; 
-    gap: 20px; 
+    justify-items: center;
+    align-items: center;
+    gap: 20px;
 }
 
 header {
-    grid-row: 1; 
+    grid-row: 1;
+    grid-column: 1 / -1; /* Span across all columns */
     background-color: black;
     color: #ffffff;
     padding: 5px;
@@ -24,12 +26,17 @@ header h1 {
 
 main {
     grid-row: 2;
+    grid-column: 2; /* Center the main content */
     padding: 20px;
     text-align: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjust column width as needed */
+    gap: 20px; /* Add gap between columns */
 }
 
 footer {
-    grid-row: 3; 
+    grid-row: 3;
+    grid-column: 1 / -1; /* Span across all columns */
     color: #fff;
     text-align: center;
     padding: 20px;
@@ -41,7 +48,8 @@ footer {
 }
 
 .options {
-    grid-row: 4; 
+    grid-row: 4;
+    grid-column: 1 / -1; /* Span across all columns */
     margin-top: 20px;
     display: flex;
     justify-content: center;
@@ -70,3 +78,4 @@ img {
     height: 300px;
     margin-bottom: 20px;
 }
+
